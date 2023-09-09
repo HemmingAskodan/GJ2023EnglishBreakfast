@@ -18,11 +18,11 @@ public class Food : MonoBehaviour
     }
 
     // The status of the food changes
-    public void FryingFood()
+    public void IsFoodFried()
     {
         if (foodTime <= 59)
         {
-            baconStatus = "undercooked";
+            cookingStatus = "undercooked";
         }
         else if (foodTime <= 60)
         {
@@ -31,6 +31,7 @@ public class Food : MonoBehaviour
         else if (foodTime <= 120)
         {
             cookingStatus = "overcooked";
+
         }
     }
 

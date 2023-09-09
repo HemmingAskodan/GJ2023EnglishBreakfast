@@ -7,7 +7,8 @@ public class Food : MonoBehaviour
     float foodTime;
     float baconItem;
 
-    float
+    float sellEgg = 10;
+
 
     float beansItem;
 
@@ -23,12 +24,24 @@ public class Food : MonoBehaviour
     }
 
     //Prices for buying food items
-    public void FoodPrices(float buyEgg, float buyBacon, float buyBeans)
+    public void FoodPrices(float eggPrice, float baconPrice, float beansPrice)
     {
-        buyEgg = 10.0f;
-        buyBacon = 8.5f;
-        buyBeans = 12.0f;
+        eggPrice = 10.0f;
+        baconPrice = 8.5f;
+        beansPrice = 12.0f;
+
+        if (cookingStatus == "undercooked")
+        {
+            eggPrice = eggPrice - 7;
+            baconPrice = baconPrice - 7;
+            beansPrice = beansPrice - 7;
+        }
     }
+
+    // public void SellPrices(float sellEgg, float sellBacon, float sellBeans)
+    // {
+    //     if 
+    // }
 
     public void CookTime()
     {

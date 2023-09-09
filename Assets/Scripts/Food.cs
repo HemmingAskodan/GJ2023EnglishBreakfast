@@ -15,8 +15,9 @@ public class Food : MonoBehaviour
 
     public float optimalSell = 10.0f;
     public float foodValue = 10.0f;
-    public float optimalTimeSeconds = 10.0f;
-    public float acceptedOffset = 2.0f;
+    private float optimalTimeSeconds = 10.0f;
+    private float acceptedOffset = 2.0f;
+    private float missingCookOffset = 5.0f;
 
     public float currentSellValue { get; private set; }
 
@@ -55,10 +56,21 @@ public class Food : MonoBehaviour
 
     // }
 
+    //Calculates the value of the food, judging by how long it's on the pan
+    public void fryFood()
+    {
+        currentSellValue = optimalSell - optimalTimeSeconds * currentFryTime;
+        currentFryTime += Time.deltaTime;
+    }
+
     // The status of the food changes
     public void IsFoodFried()
     {
-        if (currentFryTime <= (optimalTimeSeconds - acceptedOffset))
+        if (currentFryTime <= (optimalTimeSeconds - acceptedOffset - missingCookOffset))
+        {
+            cookingStatus = "unacceptable";
+        }
+        else if (currentFryTime <= (optimalTimeSeconds + acceptedOffset))
         {
             cookingStatus = "undercooked";
         }
@@ -66,12 +78,14 @@ public class Food : MonoBehaviour
         {
             cookingStatus = "overcooked";
         }
-    }
-
-    public void fryFood()
-    {
-        currentSellValue = optimalSell - optimalTimeSeconds * currentFryTime;
-        currentFryTime += Time.deltaTime;
+        else if (currentFryTime <= (optimalTimeSeconds + acceptedOffset + missingCookOffset))
+        {
+            cookingStatus = "unacceptable";
+        }
+        else
+        {
+            cookingStatus = "perfect";
+        }
     }
 
     // //Calculates how much money you get for the good

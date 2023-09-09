@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
+
+    void Awake()
+    {}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,6 @@ public class Food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float time = Time.deltaTime;
     }
 }

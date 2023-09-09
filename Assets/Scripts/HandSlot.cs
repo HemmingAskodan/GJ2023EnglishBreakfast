@@ -41,13 +41,10 @@ public class HandSlot : MonoBehaviour
                 PanSlot panSlot = collider2D.GetComponent<PanSlot>();
                 if (panSlot != null)
                 {
-                    print("Inside Pan slot..");
                     if (panSlot.isPanOccupied())
                     {
-                        print("occupied");
                         if (foodItem == null)
                         {
-                            print("taking food");
                             PickupFoodItem(panSlot.GiveFromPan());
                         }
                         else
@@ -60,8 +57,6 @@ public class HandSlot : MonoBehaviour
                     }
                     else
                     {
-                        print("not occupied");
-                        print(foodItem);
                         if (foodItem == null)
                         {
                             // Nothing to do
@@ -72,16 +67,37 @@ public class HandSlot : MonoBehaviour
                         }
                     }
                 }
+
+                FinalPlate finalPlate = collider2D.GetComponent<FinalPlate>();
+                if (finalPlate != null)
+                {
+                    if (foodItem != null)
+                    {
+                        finalPlate.AddFoodItem(PlaceDownFoodItem());
+                    }
+                    else
+                    {
+                        // Not able to pickup from this plate.
+                    }
+                }
             }
         }
     }
 
-    public void PickupFoodItem(GameObject item)
+    private bool PickupFoodItem(GameObject item)
     {
-        foodItem = item;
+        if (foodItem == null)
+        {
+            foodItem = item;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    GameObject PlaceDownFoodItem()
+    private GameObject PlaceDownFoodItem()
     {
         GameObject foodToPlace = foodItem;
         foodItem = null;

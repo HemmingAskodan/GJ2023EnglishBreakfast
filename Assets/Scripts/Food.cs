@@ -5,6 +5,11 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     float foodTime;
+    float baconItem;
+
+    float
+
+    float beansItem;
 
     string cookingStatus;
 
@@ -13,6 +18,19 @@ public class Food : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
+
+    }
+
+    //Prices for buying food items
+    public void FoodPrices(float buyEgg, float buyBacon, float buyBeans)
+    {
+        buyEgg = 10.0f;
+        buyBacon = 8.5f;
+        buyBeans = 12.0f;
+    }
+
+    public void CookTime()
     {
 
     }

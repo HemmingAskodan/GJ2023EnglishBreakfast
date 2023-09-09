@@ -33,8 +33,10 @@ public class PanSlot : MonoBehaviour
         foodItem = item;
     }
 
-    public void RemoveFromPan()
+    public GameObject GiveFromPan()
     {
+        GameObject givenFoodItem = foodItem;
         foodItem = null;
+        return givenFoodItem;
     }
 }

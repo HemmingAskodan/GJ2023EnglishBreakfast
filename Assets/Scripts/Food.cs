@@ -11,7 +11,7 @@ public class Food : MonoBehaviour
 
     public string foodName;
 
-    public string cookingStatus;
+    public string cookingFeedback { get; private set; }
 
     public float optimalSell = 10.0f;
     public float foodValue = 10.0f;
@@ -63,30 +63,32 @@ public class Food : MonoBehaviour
         currentFryTime += Time.deltaTime;
     }
 
-    // The status of the food changes
+    // Calculates if the food has been cooked for the right amount of time
+    // After sending the food, the player receives a message with feedback
     public void IsFoodFried()
     {
         if (currentFryTime <= (optimalTimeSeconds - acceptedOffset - missingCookOffset))
         {
-            cookingStatus = "unacceptable";
+            cookingFeedback = "unacceptable";
         }
-        else if (currentFryTime <= (optimalTimeSeconds + acceptedOffset))
+        else if (currentFryTime < (optimalTimeSeconds - acceptedOffset))
         {
-            cookingStatus = "undercooked";
+            cookingFeedback = "undercooked";
         }
-        else if (currentFryTime >= (optimalTimeSeconds + acceptedOffset))
+        else if (currentFryTime > (optimalTimeSeconds + acceptedOffset))
         {
-            cookingStatus = "overcooked";
+            cookingFeedback = "overcooked";
         }
-        else if (currentFryTime <= (optimalTimeSeconds + acceptedOffset + missingCookOffset))
+        else if (currentFryTime >= (optimalTimeSeconds + acceptedOffset + missingCookOffset))
         {
-            cookingStatus = "unacceptable";
+            cookingFeedback = "unacceptable";
         }
         else
         {
-            cookingStatus = "perfect";
+            cookingFeedback = "perfect";
         }
     }
+
 
     // //Calculates how much money you get for the good
     // public float calculateSellValue(float optimalSell, float acceptedOffset, float missingCookOffset)

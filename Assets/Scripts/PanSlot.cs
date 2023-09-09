@@ -13,8 +13,7 @@ public class PanSlot : MonoBehaviour
             Food food = foodItem.GetComponent<Food>();
             if (food != null)
             {
-                float timeFried = Time.deltaTime;
-                // food.fryFood(timeFried);
+                food.fryFood();
             }
             else
             {
@@ -23,9 +22,8 @@ public class PanSlot : MonoBehaviour
         }
     }
 
-    public bool isOccupied()
+    public bool isPanOccupied()
     {
-        print(foodItem);
         return foodItem != null;
     }
 

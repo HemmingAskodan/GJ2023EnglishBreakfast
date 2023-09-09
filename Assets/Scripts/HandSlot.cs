@@ -42,7 +42,7 @@ public class HandSlot : MonoBehaviour
                 if (panSlot != null)
                 {
                     print("Inside Pan slot..");
-                    if (panSlot.isOccupied())
+                    if (panSlot.isPanOccupied())
                     {
                         print("occupied");
                         if (foodItem == null)

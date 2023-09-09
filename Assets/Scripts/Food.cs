@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    float foodTime;
+    public float foodFryTime = 10f;
+    private float currentFryTime = 0f;
     float baconItem;
 
     float sellEgg = 10;
@@ -51,19 +52,24 @@ public class Food : MonoBehaviour
     // The status of the food changes
     public void IsFoodFried()
     {
-        if (foodTime <= 59)
+        if (foodFryTime <= 59)
         {
             cookingStatus = "undercooked";
         }
-        else if (foodTime <= 60)
+        else if (foodFryTime <= 60)
         {
             cookingStatus = "good";
         }
-        else if (foodTime <= 120)
+        else if (foodFryTime <= 120)
         {
             cookingStatus = "overcooked";
 
         }
+    }
+
+    public void fryFood()
+    {
+        currentFryTime += Time.deltaTime;
     }
 
     // Update is called once per frame

@@ -5,22 +5,13 @@ using UnityEngine;
 public class PanSlot : MonoBehaviour
 {
     public GameObject foodItem;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        float a = Time.deltaTime;
-    }
-
-
-
     // Update is called once per frame
     void Update()
     {
-        if(foodItem != null)
+        if (foodItem != null)
         {
             Food food = foodItem.GetComponent<Food>();
-            if(food != null)
+            if (food != null)
             {
                 float timeFried = Time.deltaTime;
                 // food.fryFood(timeFried);
@@ -30,5 +21,20 @@ public class PanSlot : MonoBehaviour
                 Debug.LogError("The food in the pan doesn't have a food component");
             }
         }
+    }
+
+    public bool isOccupied()
+    {
+        return foodItem != null;
+    }
+
+    public void PutOnPan(GameObject item)
+    {
+        foodItem = item;
+    }
+
+    public void RemoveFromPan()
+    {
+        foodItem = null;
     }
 }

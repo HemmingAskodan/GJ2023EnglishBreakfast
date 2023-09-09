@@ -5,6 +5,7 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     float foodTime;
+    public float food = 0;
 
     string cookingStatus;
 
@@ -16,6 +17,8 @@ public class Food : MonoBehaviour
     {
 
     }
+
+    public void
 
     // The status of the food changes
     public void IsFoodFried()
@@ -31,7 +34,6 @@ public class Food : MonoBehaviour
         else if (foodTime <= 120)
         {
             cookingStatus = "overcooked";
-
         }
     }
 

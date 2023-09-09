@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Food : MonoBehaviour
@@ -11,10 +12,9 @@ public class Food : MonoBehaviour
 
     public string foodName;
 
-    public string cookingFeedback { get; private set; }
+    // public string cookingFeedback { get; private set; }
 
     public float optimalSell = 10.0f; //optimal price of food is 10 dollars
-    public float foodValue = 10.0f;
     private float optimalTimeSeconds = 10.0f; //perfect cooking time is 10 seconds
     private float acceptedOffset = 2.0f; //it is acceptable if cooking time 2 seconds less or more
     private float missingCookOffset = 5.0f; //5 seconds less than perfect cooking time is unacceptable
@@ -65,27 +65,27 @@ public class Food : MonoBehaviour
 
     // Calculates whether or not the food has been cooked for the right amount of time
     // After sending the food, the player receives a message with feedback
-    public void IsFoodFried()
+    public string GetCookingFeedback()
     {
         if (currentFryTime <= (optimalTimeSeconds - acceptedOffset - missingCookOffset))
         {
-            cookingFeedback = "unacceptable";
+            return "unacceptable";
         }
         else if (currentFryTime < (optimalTimeSeconds - acceptedOffset))
         {
-            cookingFeedback = "undercooked";
+            return "undercooked";
         }
         else if (currentFryTime > (optimalTimeSeconds + acceptedOffset))
         {
-            cookingFeedback = "overcooked";
+            return "overcooked";
         }
         else if (currentFryTime >= (optimalTimeSeconds + acceptedOffset + missingCookOffset))
         {
-            cookingFeedback = "unacceptable";
+            return "unacceptable";
         }
         else
         {
-            cookingFeedback = "perfect";
+            return "perfect";
         }
     }
 
@@ -95,4 +95,24 @@ public class Food : MonoBehaviour
     // {
     //     float time = Time.deltaTime;
     // }
+
+    public float calculateSellValue()
+    {
+        if (currentFryTime >= optimalTimeSeconds - acceptedOffset && currentFryTime <= optimalTimeSeconds + acceptedOffset)
+            return optimalSell;
+
+        if (currentFryTime < optimalTimeSeconds - acceptedOffset)
+        {
+            float sell = optimalSell - optimalSell * ((optimalTimeSeconds - acceptedOffset - currentFryTime) / missingCookOffset);
+            return Mathf.Max(0, sell);
+        }
+
+        if (currentFryTime > optimalTimeSeconds + acceptedOffset)
+        {
+            float sell = optimalSell - optimalSell * ((-(optimalTimeSeconds + acceptedOffset) + currentFryTime) / missingCookOffset);
+            return Mathf.Max(0, sell);
+        }
+
+        return 0;
+    }
 }

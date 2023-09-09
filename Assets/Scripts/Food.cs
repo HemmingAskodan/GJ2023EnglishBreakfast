@@ -7,11 +7,11 @@ public class Food : MonoBehaviour
 
     private float currentFryTime = 0f;
 
-    public float foodItem;
+    // public float foodItem;
 
     public string foodName;
 
-    private string cookingStatus;
+    public string cookingStatus;
 
     public float optimalSell = 10.0f;
     public float foodValue = 10.0f;
@@ -31,20 +31,20 @@ public class Food : MonoBehaviour
 
     }
 
-    //Prices for buying food items
-    public void FoodPrices(float eggPrice, float baconPrice, float beansPrice)
-    {
-        eggPrice = 10.0f;
-        baconPrice = 8.5f;
-        beansPrice = 12.0f;
+    // //Prices for buying food items
+    // public void FoodPrices(float eggPrice, float baconPrice, float beansPrice)
+    // {
+    //     eggPrice = 10.0f;
+    //     baconPrice = 8.5f;
+    //     beansPrice = 12.0f;
 
-        if (cookingStatus == "undercooked")
-        {
-            eggPrice = eggPrice - 7;
-            baconPrice = baconPrice - 7;
-            beansPrice = beansPrice - 7;
-        }
-    }
+    //     if (cookingStatus == "undercooked")
+    //     {
+    //         eggPrice = eggPrice - 7;
+    //         baconPrice = baconPrice - 7;
+    //         beansPrice = beansPrice - 7;
+    //     }
+    // }
 
     // public void SellPrices(float sellEgg, float sellBacon, float sellBeans)
     // {
@@ -56,8 +56,8 @@ public class Food : MonoBehaviour
 
     // }
 
-    //Calculates the value of the food, judging by how long it's on the pan
     public void fryFood()
+    //Calculates the value of the food, judging by how long it's on the pan
     {
         currentSellValue = optimalSell - optimalTimeSeconds * currentFryTime;
         currentFryTime += Time.deltaTime;

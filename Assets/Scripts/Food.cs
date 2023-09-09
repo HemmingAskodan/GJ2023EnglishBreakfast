@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    public float currentFryTime = 10f;
+
     private float currentFryTime = 0f;
 
     public float foodItem;
 
     public string foodName;
+
+    private string cookingStatus;
 
     public float optimalSell = 10.0f;
     public float foodValue = 10.0f;
@@ -64,7 +66,6 @@ public class Food : MonoBehaviour
         {
             cookingStatus = "overcooked";
         }
-        else if (currentFryTime <= ())
     }
 
     public void fryFood()

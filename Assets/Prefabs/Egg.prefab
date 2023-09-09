@@ -97,4 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2288e0eff64f0eae654ef6a1616e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodFryTime: 10
+  foodName: Egg
+  cookingStatus: 
+  optimalSell: 10
+  foodValue: 10

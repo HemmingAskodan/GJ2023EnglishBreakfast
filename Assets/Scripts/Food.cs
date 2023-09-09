@@ -13,13 +13,13 @@ public class Food : MonoBehaviour
 
     public string cookingFeedback { get; private set; }
 
-    public float optimalSell = 10.0f;
+    public float optimalSell = 10.0f; //optimal price of food is 10 dollars
     public float foodValue = 10.0f;
-    private float optimalTimeSeconds = 10.0f;
-    private float acceptedOffset = 2.0f;
-    private float missingCookOffset = 5.0f;
+    private float optimalTimeSeconds = 10.0f; //perfect cooking time is 10 seconds
+    private float acceptedOffset = 2.0f; //it is acceptable if cooking time 2 seconds less or more
+    private float missingCookOffset = 5.0f; //5 seconds less than perfect cooking time is unacceptable
 
-    public float currentSellValue { get; private set; }
+    // public float currentSellValue { get; private set; }
 
 
     void Awake()
@@ -63,7 +63,7 @@ public class Food : MonoBehaviour
         currentFryTime += Time.deltaTime;
     }
 
-    // Calculates if the food has been cooked for the right amount of time
+    // Calculates whether or not the food has been cooked for the right amount of time
     // After sending the food, the player receives a message with feedback
     public void IsFoodFried()
     {
@@ -89,14 +89,6 @@ public class Food : MonoBehaviour
         }
     }
 
-
-    // //Calculates how much money you get for the good
-    // public float calculateSellValue(float optimalSell, float acceptedOffset, float missingCookOffset)
-    // {
-    //     optimalSell = 10.0f;
-
-    //     //Formula for the food's sell value. 8-10 seconds cooking is right.
-    // }
 
     // // Update is called once per frame
     // void Update()

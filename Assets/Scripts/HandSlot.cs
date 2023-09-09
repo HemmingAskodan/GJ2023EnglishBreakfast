@@ -37,19 +37,17 @@ public class HandSlot : MonoBehaviour
                         PickupFoodItem(newFoodItem);
                     }
                 }
-                else
-                {
-                    // Drop whatever to nothingness
-                    PlaceDownFoodItem();
-                }
 
                 PanSlot panSlot = collider2D.GetComponent<PanSlot>();
                 if (panSlot != null)
                 {
+                    print("Inside Pan slot..");
                     if (panSlot.isOccupied())
                     {
+                        print("occupied");
                         if (foodItem == null)
                         {
+                            print("taking food");
                             PickupFoodItem(panSlot.GiveFromPan());
                         }
                         else
@@ -62,6 +60,8 @@ public class HandSlot : MonoBehaviour
                     }
                     else
                     {
+                        print("not occupied");
+                        print(foodItem);
                         if (foodItem == null)
                         {
                             // Nothing to do

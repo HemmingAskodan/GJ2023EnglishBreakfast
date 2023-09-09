@@ -25,11 +25,13 @@ public class PanSlot : MonoBehaviour
 
     public bool isOccupied()
     {
+        print(foodItem);
         return foodItem != null;
     }
 
     public void PutOnPan(GameObject item)
     {
+        print("Putting on pan:" + item);
         foodItem = item;
     }
 

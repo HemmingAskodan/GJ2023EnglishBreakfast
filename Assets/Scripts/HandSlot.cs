@@ -50,9 +50,9 @@ public class HandSlot : MonoBehaviour
                         else
                         {
                             // Swap items
-                            GameObject tempItem = foodItem;
-                            PickupFoodItem(panSlot.GiveFromPan());
-                            panSlot.PutOnPan(tempItem);
+                            // GameObject tempItem = foodItem;
+                            // PickupFoodItem(panSlot.GiveFromPan());
+                            // panSlot.PutOnPan(tempItem);
                         }
                     }
                     else

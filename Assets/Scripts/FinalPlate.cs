@@ -47,4 +47,9 @@ public class FinalPlate : MonoBehaviour
 
         return totalValue;
     }
+
+    public Food[] GetFinalFoodPlate()
+    {
+        return foodList.ToArray();
+    }
 }

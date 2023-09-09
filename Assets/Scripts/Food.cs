@@ -5,6 +5,12 @@ using UnityEngine;
 public class Food : MonoBehaviour
 {
     float foodTime;
+    float baconItem;
+
+    float sellEgg = 10;
+
+
+    float beansItem;
 
     string cookingStatus;
 
@@ -13,6 +19,31 @@ public class Food : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {
+
+    }
+
+    //Prices for buying food items
+    public void FoodPrices(float eggPrice, float baconPrice, float beansPrice)
+    {
+        eggPrice = 10.0f;
+        baconPrice = 8.5f;
+        beansPrice = 12.0f;
+
+        if (cookingStatus == "undercooked")
+        {
+            eggPrice = eggPrice - 7;
+            baconPrice = baconPrice - 7;
+            beansPrice = beansPrice - 7;
+        }
+    }
+
+    // public void SellPrices(float sellEgg, float sellBacon, float sellBeans)
+    // {
+    //     if 
+    // }
+
+    public void CookTime()
     {
 
     }

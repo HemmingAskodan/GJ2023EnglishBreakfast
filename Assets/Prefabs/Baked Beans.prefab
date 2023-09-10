@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: Baked beans
   optimalSell: 10
+  buyFoodPrice: 6

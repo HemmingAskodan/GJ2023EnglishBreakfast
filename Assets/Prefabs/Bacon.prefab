@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodName: Bacon
   optimalSell: 10
+  buyFoodPrice: 1.5

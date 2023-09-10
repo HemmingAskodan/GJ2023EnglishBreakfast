@@ -7,6 +7,7 @@ public class HandSlot : MonoBehaviour
 {
     public GameObject foodItem;
     private Vector3 mouseWorldPosition => Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    public Currency currency;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class HandSlot : MonoBehaviour
                     {
                         GameObject newFoodItem = Instantiate(foodPantry.foodItem);
                         PickupFoodItem(newFoodItem);
+                        currency.BuyItem(foodItem.GetComponent<Food>().buyFoodPrice);
                     }
                 }
 

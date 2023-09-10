@@ -19,6 +19,8 @@ public class Food : MonoBehaviour
     private float acceptedOffset = 2.0f; //it is acceptable if cooking time 2 seconds less or more
     private float missingCookOffset = 5.0f; //5 seconds less than perfect cooking time is unacceptable
 
+    public float buyFoodPrice = 2.0f;
+
     // public float currentSellValue { get; private set; }
 
 

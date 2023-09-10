@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4370146423557870998}
   - component: {fileID: 6920378921256396450}
   - component: {fileID: 1766755322336114941}
+  - component: {fileID: 5569744328583864169}
   m_Layer: 0
   m_Name: Baked Beans
   m_TagString: Untagged
@@ -97,6 +98,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2288e0eff64f0eae654ef6a1616e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 5569744328583864169}
   foodName: Baked beans
   optimalSell: 10
+  optimalTimeSeconds: 10
+  acceptedOffset: 2
+  missingCookOffset: 5
   buyFoodPrice: 6
+--- !u!95 &5569744328583864169
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4634505224057563420}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce7adae28cd7244e69d792da3b1f8fd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

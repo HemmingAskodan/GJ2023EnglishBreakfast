@@ -5,6 +5,7 @@ using UnityEngine;
 public class BreakfastOrderList : MonoBehaviour
 {
     public GameObject breakfastOrderGO;
+    public Transform theListTransform;
     List<BreakfastOrder> breakfastOrders = new List<BreakfastOrder>();
     float timeUntilNextOrder;
     public float minimumTimeUntilNextOrder = 2;
@@ -27,7 +28,7 @@ public class BreakfastOrderList : MonoBehaviour
 
     void CreateBreakfastOrder()
     {
-        GameObject breakfastOrderGO = Instantiate(this.breakfastOrderGO, gameObject.transform);
+        GameObject breakfastOrderGO = Instantiate(this.breakfastOrderGO, theListTransform);
 
         BreakfastOrder breakfastOrder = breakfastOrderGO.GetComponent<BreakfastOrder>();
         if (breakfastOrder == null)
@@ -39,5 +40,20 @@ public class BreakfastOrderList : MonoBehaviour
         breakfastOrders.Add(breakfastOrder);
 
         timeUntilNextOrder = Time.time + Random.Range(minimumTimeUntilNextOrder, maximumTimeUntilNextOrder);
+    }
+
+    public BreakfastOrderObj[][] GetBreakfastOrders()
+    {
+        List<BreakfastOrderObj[]> breakfastOrderObjs = new List<BreakfastOrderObj[]>();
+        foreach (BreakfastOrder b in breakfastOrders)
+        {
+            breakfastOrderObjs.Add(b.GetBreakfastOrder());
+        }
+        return breakfastOrderObjs.ToArray();
+    }
+
+    public void RemoveBreakfastOrder(int index)
+    {
+        breakfastOrders.RemoveAt(index);
     }
 }

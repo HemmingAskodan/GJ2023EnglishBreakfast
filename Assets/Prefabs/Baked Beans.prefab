@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6920378921256396450}
   - component: {fileID: 1766755322336114941}
   m_Layer: 0
-  m_Name: Egg
+  m_Name: Baked Beans
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -912492345
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2abd5135d8248554b84bd0551f79ce51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c68784bc11a1ff448b04e7b3d4489bed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2288e0eff64f0eae654ef6a1616e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodName: Egg
+  foodName: Baked beans
   optimalSell: 10

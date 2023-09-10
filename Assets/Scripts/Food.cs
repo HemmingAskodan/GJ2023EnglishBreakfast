@@ -102,13 +102,13 @@ public class Food : MonoBehaviour
 
         if (currentFryTime < optimalTimeSeconds - acceptedOffset)
         {
-            float sell = optimalSell - optimalSell * ((optimalTimeSeconds - acceptedOffset - currentFryTime) / missingCookOffset);
+            float sell = optimalTimeSeconds - optimalTimeSeconds * ((optimalTimeSeconds - acceptedOffset - currentFryTime) / missingCookOffset);
             return Mathf.Max(0, sell);
         }
 
         if (currentFryTime > optimalTimeSeconds + acceptedOffset)
         {
-            float sell = optimalSell - optimalSell * ((-(optimalTimeSeconds + acceptedOffset) + currentFryTime) / missingCookOffset);
+            float sell = optimalTimeSeconds - optimalTimeSeconds * ((-(optimalTimeSeconds + acceptedOffset) + currentFryTime) / missingCookOffset);
             return Mathf.Max(0, sell);
         }
 

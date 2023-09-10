@@ -31,6 +31,7 @@ public class Bell : MonoBehaviour
             float plateValue = finalPlate.CalculateValueOfPlate();
             breakfastOrderList.RemoveBreakfastOrder(indexOrder);
             finalPlate.ClearPlate();
+            print("Money you get:" + plateValue);
             currency.AddMoney(plateValue);
         }
     }

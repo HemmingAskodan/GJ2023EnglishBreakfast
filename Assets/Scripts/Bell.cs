@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
+using System.Media;
 
 public class Bell : MonoBehaviour
 {
     public FinalPlate finalPlate;
     public BreakfastOrderList breakfastOrderList;
+
+    public AudioSource audioSource;
+
     public void RingBell()
     {
 
         // Play sound *Ding*
+        audioSource.Play();
 
         Food[] finalFoodPlate = finalPlate.GetFinalFoodPlate();
         BreakfastOrderObj[][] breakfastOrders = breakfastOrderList.GetBreakfastOrders();

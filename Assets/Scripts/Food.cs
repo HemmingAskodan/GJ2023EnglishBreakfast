@@ -15,9 +15,9 @@ public class Food : MonoBehaviour
     // public string cookingFeedback { get; private set; }
 
     public float optimalSell = 10.0f; //optimal price of food is 10 dollars
-    private float optimalTimeSeconds = 10.0f; //perfect cooking time is 10 seconds
-    private float acceptedOffset = 2.0f; //it is acceptable if cooking time 2 seconds less or more
-    private float missingCookOffset = 5.0f; //5 seconds less than perfect cooking time is unacceptable
+    public float optimalTimeSeconds = 10.0f; //perfect cooking time is 10 seconds
+    public float acceptedOffset = 2.0f; //it is acceptable if cooking time 2 seconds less or more
+    public float missingCookOffset = 5.0f; //5 seconds less than perfect cooking time is unacceptable
 
     public float buyFoodPrice = 2.0f;
 

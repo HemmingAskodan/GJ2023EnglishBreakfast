@@ -1,44 +1,36 @@
-using System;
-using System.Timers;
+using UnityEngine;
+using UnityEngine.UI;
 
-class GameTimer
+public class GameTimer : MonoBehaviour
 {
-    public static Timer timer;
-    private static int countdown = 5 * 60; // 5 minutes in seconds
+    public Text timerText;
+    public float countdownTime = 300.0f; // 5 minutes in seconds
+    private float currentTime;
 
-    static void Main(string[] args)
+    private void Start()
     {
-        // Create a new timer with a 1-second interval
-        timer = new Timer(1000);
-
-        // Hook up the Elapsed event handler
-        timer.Elapsed += TimerElapsed;
-
-        // Start the timer
-        timer.Start();
-
-        Console.WriteLine("5-minute timer started. Press any key to stop.");
-        Console.ReadKey();
-
-        // Stop the timer when you're done with it
-        timer.Stop();
-        timer.Dispose();
+        currentTime = countdownTime;
     }
 
-    private static void TimerElapsed(object sender, ElapsedEventArgs e)
+    private void Update()
     {
-        countdown--;
+        // Update the timer
+        currentTime -= Time.deltaTime;
 
-        if (countdown == 0)
+        // Ensure the timer doesn't go negative
+        currentTime = Mathf.Max(currentTime, 0.0f);
+
+        // Calculate minutes and seconds
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+
+        // Display the timer in the "MM:SS" format
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        // Check if the timer has reached zero
+        if (currentTime <= 0.0f)
         {
-            Console.WriteLine("Timer expired. 5 minutes have passed.");
-            timer.Stop();
-        }
-        else
-        {
-            int minutes = countdown / 60;
-            int seconds = countdown % 60;
-            Console.WriteLine($"Time remaining: {minutes} minutes {seconds} seconds");
+            // Call function that stops the game
         }
     }
 }

@@ -59,7 +59,6 @@ public class Food : MonoBehaviour
     public void fryFood()
     //Calculates the value of the food, judging by how long it's on the pan
     {
-        currentSellValue = optimalSell - optimalTimeSeconds * currentFryTime;
         currentFryTime += Time.deltaTime;
     }
 

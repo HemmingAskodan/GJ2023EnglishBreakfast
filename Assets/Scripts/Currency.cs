@@ -13,12 +13,24 @@ public class Currency : MonoBehaviour
         if (playerMoney >= itemCost)
         {
             playerMoney -= itemCost; // Deduct the item cost
+            PrintAmount();
             return true; // Purchase successful
         }
         else
         {
             return false; // Not enough money to buy the item
         }
+    }
+
+    public void GetMoney(float amount)
+    {
+        playerMoney += itemCost;
+        PrintAmount();
+    }
+
+    void PrintAmount()
+    {
+        currencyText.text = playerMoney.ToString("n2") + " $";
     }
 
     // Method to get the current player money amount

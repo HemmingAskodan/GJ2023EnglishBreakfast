@@ -140,6 +140,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 56646773552925846a8bfc528b674f8b, type: 3}
   - {fileID: 21300000, guid: c68784bc11a1ff448b04e7b3d4489bed, type: 3}
   - {fileID: 21300000, guid: 3e7094ac1e08ba84d90cfe85f754609c, type: 3}
+  FoodImagesTransform: {fileID: 1526877133931859090}
+  UIImage: {fileID: 972446952952942191, guid: d087abe48f8af404ea3cc9e6d7ef1cdb, type: 3}
 --- !u!222 &1445356952886066985
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -188,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526877133931859090}
   - component: {fileID: 6513186070888524176}
+  - component: {fileID: 7254000798575296511}
   m_Layer: 5
   m_Name: Food vary Panel
   m_TagString: Untagged
@@ -222,6 +225,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4433540669220154824}
   m_CullTransparentMesh: 1
+--- !u!114 &7254000798575296511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433540669220154824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &9137232268835005134
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class BreakfastOrderList : MonoBehaviour
     {
         if (timeUntilNextOrder < Time.time)
         {
-            // CreateBreakfastOrder();
+            CreateBreakfastOrder();
         }
     }
 

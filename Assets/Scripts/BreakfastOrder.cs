@@ -19,6 +19,8 @@ public class BreakfastOrder : MonoBehaviour
     public string[] orderVariation = { "Egg", "Bacon", "Baked beans", "Sausage" };
     public Sprite[] orderVariationImages = { };
     BreakfastOrderObj[] orderVariationObjs;
+    public Transform FoodImagesTransform;
+    public GameObject UIImage;
 
     void Awake()
     {
@@ -43,7 +45,11 @@ public class BreakfastOrder : MonoBehaviour
 
         for (int i = 0; i < orderAmount; i++)
         {
-            listOrder.Add(orderVariation[UnityEngine.Random.Range(0, orderVariation.Length)]);
+            int randomIndex = UnityEngine.Random.Range(0, orderVariation.Length);
+            listOrder.Add(orderVariation[randomIndex]);
+            GameObject uIImage = Instantiate(UIImage, FoodImagesTransform);
+            Image image = uIImage.GetComponent<Image>();
+            image.sprite = orderVariationImages[randomIndex];
         }
 
         // listOrder.Sort((x, y) => { return Array.IndexOf(orderVariation, x) > Array.IndexOf(orderVariation, y) ? 1 : -1; });

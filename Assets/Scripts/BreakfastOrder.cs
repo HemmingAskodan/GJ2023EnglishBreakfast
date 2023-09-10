@@ -17,6 +17,7 @@ public class BreakfastOrder : MonoBehaviour
     public Image barImage;
     List<string> listOrder = new List<string>();
     public string[] orderVariation = { "Egg", "Bacon", "Baked beans", "Sausage" };
+    public Sprite[] orderVariationImages = { };
     BreakfastOrderObj[] orderVariationObjs;
 
     void Awake()
@@ -43,12 +44,6 @@ public class BreakfastOrder : MonoBehaviour
         for (int i = 0; i < orderAmount; i++)
         {
             listOrder.Add(orderVariation[UnityEngine.Random.Range(0, orderVariation.Length)]);
-        }
-
-        print("Order involves:");
-        for (int i = 0; i < listOrder.Count; i++)
-        {
-            print(listOrder[i]);
         }
 
         // listOrder.Sort((x, y) => { return Array.IndexOf(orderVariation, x) > Array.IndexOf(orderVariation, y) ? 1 : -1; });

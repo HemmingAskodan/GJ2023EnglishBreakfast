@@ -91,6 +91,19 @@ public class HandSlot : MonoBehaviour
                         bell.RingBell();
                     }
                 }
+
+                TrashCan trashCan = collider2D.GetComponent<TrashCan>();
+                if (trashCan != null)
+                {
+                    if (foodItem == null)
+                    {
+                        trashCan.ClearFinalPlate();
+                    }
+                    else
+                    {
+                        Destroy(PlaceDownFoodItem().gameObject);
+                    }
+                }
             }
         }
     }

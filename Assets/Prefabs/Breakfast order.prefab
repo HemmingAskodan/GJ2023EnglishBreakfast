@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 163fe323e8de4a74c89625eff6e58a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  willingWaitTimeSeconds: 60
   penaltyOnTimeOut: 5
   barImage: {fileID: 1032463711803260547}
   orderVariation:
@@ -136,6 +135,11 @@ MonoBehaviour:
   - Bacon
   - Baked beans
   - Sausage
+  orderVariationImages:
+  - {fileID: 21300000, guid: 2b1f64bbe938da849af579b8f9ba641b, type: 3}
+  - {fileID: 21300000, guid: 56646773552925846a8bfc528b674f8b, type: 3}
+  - {fileID: 21300000, guid: c68784bc11a1ff448b04e7b3d4489bed, type: 3}
+  - {fileID: 21300000, guid: 3e7094ac1e08ba84d90cfe85f754609c, type: 3}
 --- !u!222 &1445356952886066985
 CanvasRenderer:
   m_ObjectHideFlags: 0

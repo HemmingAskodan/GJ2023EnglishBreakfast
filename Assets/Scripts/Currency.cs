@@ -22,7 +22,7 @@ public class Currency : MonoBehaviour
         }
     }
 
-    public void GetMoney(float amount)
+    public void AddMoney(float amount)
     {
         playerMoney += itemCost;
         PrintAmount();

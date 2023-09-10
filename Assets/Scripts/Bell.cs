@@ -12,6 +12,7 @@ public class Bell : MonoBehaviour
 
     public AudioSource audioSource;
 
+    public Currency currency;
     public void RingBell()
     {
 
@@ -30,7 +31,7 @@ public class Bell : MonoBehaviour
             float plateValue = finalPlate.CalculateValueOfPlate();
             breakfastOrderList.RemoveBreakfastOrder(indexOrder);
             finalPlate.ClearPlate();
-            // TODO: plateValue needs to be added to currency.
+            currency.AddMoney(plateValue);
         }
     }
 

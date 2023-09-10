@@ -590,8 +590,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -912492345
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0db4f59eb3151247be8258254ccc4cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -973,7 +973,7 @@ SpriteRenderer:
   m_SortingLayerID: -318506795
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d82d28f5adb23ac4bad9a7ecccb9a9cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c8bd97687eb54b6b97972e3fae92efb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1448,8 +1448,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -912492345
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0db4f59eb3151247be8258254ccc4cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2032,8 +2032,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -912492345
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0db4f59eb3151247be8258254ccc4cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2590,8 +2590,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -912492345
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0db4f59eb3151247be8258254ccc4cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2753,10 +2753,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 251034676609519112, guid: 4891f9eb2f416144c858287ed8c7d1d6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1819265894746909552, guid: 4891f9eb2f416144c858287ed8c7d1d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.27

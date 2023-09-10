@@ -82,6 +82,15 @@ public class HandSlot : MonoBehaviour
                         // Not able to pickup from this plate.
                     }
                 }
+
+                Bell bell = collider2D.GetComponent<Bell>();
+                if (bell != null)
+                {
+                    if (foodItem == null)
+                    {
+                        bell.RingBell();
+                    }
+                }
             }
         }
     }

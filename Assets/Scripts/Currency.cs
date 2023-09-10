@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Currency : MonoBehaviour
 {
+    public Text currencyText;
     public float playerMoney = 200.0f; // Initial money amount, 200 dollars
     public float itemCost; // The price for each raw item
 

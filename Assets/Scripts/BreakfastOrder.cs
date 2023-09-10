@@ -45,6 +45,12 @@ public class BreakfastOrder : MonoBehaviour
             listOrder.Add(orderVariation[UnityEngine.Random.Range(0, orderVariation.Length)]);
         }
 
+        print("Order involves:");
+        for (int i = 0; i < listOrder.Count; i++)
+        {
+            print(listOrder[i]);
+        }
+
         // listOrder.Sort((x, y) => { return Array.IndexOf(orderVariation, x) > Array.IndexOf(orderVariation, y) ? 1 : -1; });
 
         orderVariationObjs = new BreakfastOrderObj[orderVariation.Length];

@@ -22,7 +22,7 @@ public class BreakfastOrderList : MonoBehaviour
     {
         if (timeUntilNextOrder < Time.time)
         {
-            CreateBreakfastOrder();
+            // CreateBreakfastOrder();
         }
     }
 
@@ -54,6 +54,7 @@ public class BreakfastOrderList : MonoBehaviour
 
     public void RemoveBreakfastOrder(int index)
     {
+        Destroy(breakfastOrders[index].gameObject);
         breakfastOrders.RemoveAt(index);
     }
 }

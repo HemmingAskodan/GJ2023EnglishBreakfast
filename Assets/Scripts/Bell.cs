@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Bell : MonoBehaviour
 {
@@ -15,36 +16,44 @@ public class Bell : MonoBehaviour
         Food[] finalFoodPlate = finalPlate.GetFinalFoodPlate();
         BreakfastOrderObj[][] breakfastOrders = breakfastOrderList.GetBreakfastOrders();
 
-        int indexOrder = indexOfBreakfastOrder(finalFoodPlate, breakfastOrders);
+        int indexOrder = indexOfBreakfastOrder(finalFoodPlate.Select(x => x.foodName).ToArray(), breakfastOrders);
+
+        print("Index found is:" + indexOrder);
 
         if (indexOrder != -1)
         {
             float plateValue = finalPlate.CalculateValueOfPlate();
             breakfastOrderList.RemoveBreakfastOrder(indexOrder);
-
+            finalPlate.ClearPlate();
             // TODO: plateValue needs to be added to currency.
         }
     }
 
-    int indexOfBreakfastOrder(Food[] foodPlate, BreakfastOrderObj[][] breakfastOrders)
+    int indexOfBreakfastOrder(string[] foodPlate, BreakfastOrderObj[][] breakfastOrders)
     {
+        if (foodPlate.Length == 0)
+            return -1;
+
+        List<string> foodPlateSorted = foodPlate.ToList();
+        foodPlateSorted = foodPlateSorted.OrderBy(q => q).ToList();
+        string foodPlateString = foodPlateSorted.Aggregate((x, y) => x + y);
+
         for (int i = 0; i < breakfastOrders.Length; i++)
         {
-            bool[] checkedFoods = new bool[breakfastOrders[i].Length]; // All start with false
-
-            foreach (Food food in foodPlate)
+            List<string> orderFoodStrings = new List<string>();
+            for (int j = 0; j < breakfastOrders[i].Length; j++)
             {
-                for (int j = 0; j < breakfastOrders[i].Length; j++)
+                for (int k = 0; k < breakfastOrders[i][j].foodAmount; k++)
                 {
-                    if (!checkedFoods[j] && food.foodName == breakfastOrders[i][j].foodName)
-                    {
-                        checkedFoods[j] = true;
-                        break;
-                    }
+                    orderFoodStrings.Add(breakfastOrders[i][j].foodName);
                 }
             }
+            List<string> listOrderSorted = orderFoodStrings;
+            listOrderSorted = listOrderSorted.OrderBy(q => q).ToList();
+            string breakfastOrderString = listOrderSorted.Aggregate((x, y) => x + y);
 
-            if (checkedFoods.All(x => true))
+            print("if (" + breakfastOrderString + "==" + foodPlateString + ")");
+            if (breakfastOrderString == foodPlateString)
             {
                 return i;
             }

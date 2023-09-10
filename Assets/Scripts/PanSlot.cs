@@ -29,7 +29,6 @@ public class PanSlot : MonoBehaviour
 
     public void PutOnPan(GameObject item)
     {
-        print("Putting on pan:" + item);
         foodItem = item;
     }
 

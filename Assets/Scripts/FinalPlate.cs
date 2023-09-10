@@ -35,7 +35,7 @@ public class FinalPlate : MonoBehaviour
         List<float> sellValues = new List<float>();
         for (int i = 0; i < foodList.Count; i++)
         {
-            // sellValues.Add(foodList[i].calculateSellValue());
+            sellValues.Add(foodList[i].calculateSellValue());
         }
 
         float totalValue = sellValues.Aggregate((a, b) => a + b);

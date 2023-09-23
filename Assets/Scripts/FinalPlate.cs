@@ -33,13 +33,14 @@ public class FinalPlate : MonoBehaviour
     public float CalculateValueOfPlate()
     {
         List<float> sellValues = new List<float>();
-        if (sellValues.Count == 0)
+        if (foodList.Count == 0)
         {
             return 0;
         }
         for (int i = 0; i < foodList.Count; i++)
         {
             sellValues.Add(foodList[i].calculateSellValue());
+            print("= " + foodList[i].calculateSellValue());
         }
 
         float totalValue = sellValues.Aggregate((a, b) => a + b);

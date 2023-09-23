@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,7 @@ public class Currency : MonoBehaviour
 {
     public Text currencyText;
     public float playerMoney = 200.0f; // Initial money amount, 200 dollars
-    public float itemCost; // The price for each raw item
+    public GameObject currencyWinText;
 
     // Method to buy an item
     public bool BuyItem(float itemCost)
@@ -13,6 +14,7 @@ public class Currency : MonoBehaviour
         if (playerMoney >= itemCost)
         {
             playerMoney -= itemCost; // Deduct the item cost
+            AddWinLossText(-itemCost);
             PrintAmount();
             return true; // Purchase successful
         }
@@ -24,8 +26,15 @@ public class Currency : MonoBehaviour
 
     public void AddMoney(float amount)
     {
-        playerMoney += itemCost;
+        playerMoney += amount;
+        AddWinLossText(amount);
         PrintAmount();
+    }
+
+    private void AddWinLossText(float amount)
+    {
+        GameObject textGO = Instantiate(currencyWinText, transform.position + (Vector3.up * 50), Quaternion.identity, transform.parent);
+        textGO.GetComponent<CurrencyChangeText>().SetValue(amount);
     }
 
     void PrintAmount()

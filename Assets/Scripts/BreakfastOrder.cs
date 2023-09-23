@@ -48,7 +48,7 @@ public class BreakfastOrder : MonoBehaviour
             int randomIndex = UnityEngine.Random.Range(0, orderVariation.Length);
             listOrder.Add(orderVariation[randomIndex]);
             GameObject uIImage = Instantiate(UIImage, FoodImagesTransform);
-            Image image = uIImage.GetComponent<Image>();
+            Image image = uIImage.GetComponentInChildren<Image>();
             image.sprite = orderVariationImages[randomIndex];
         }
 
